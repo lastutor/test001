@@ -8,6 +8,7 @@ A simple bulletin board application that allows users to create and view posts.
 
 *   Create a new post with a title and content.
 *   View a list of all posts.
+*   **Post Persistence:** Posts are saved in the browser's local storage so they persist after a page refresh.
 
 ## Design
 
@@ -16,8 +17,7 @@ A simple bulletin board application that allows users to create and view posts.
 
 ## Current Plan
 
-*   **Task:** Create the initial structure and functionality of the bulletin board.
+*   **Task:** Implement post persistence using local storage.
 *   **Steps:**
-    1.  Modify `index.html` to create the main structure of the page, including a post creation form and a post list container.
-    2.  Modify `style.css` to add basic styling.
-    3.  Modify `main.js` to handle form submission and dynamically create new posts.
+    1.  Modify `main.js` to save new posts to `localStorage`.
+    2.  Modify `main.js` to load existing posts from `localStorage` when the page loads.
