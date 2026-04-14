@@ -1,15 +1,56 @@
 /* Basic styling for the bulletin board */
+:root {
+    --bg-color: #f4f4f4;
+    --header-bg: #333;
+    --header-text: white;
+    --card-bg: white;
+    --text-color: #333;
+    --input-border: #ccc;
+    --button-bg: #333;
+    --button-text: white;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --header-bg: #000;
+    --header-text: #e0e0e0;
+    --card-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --input-border: #444;
+    --button-bg: #555;
+    --button-text: #fff;
+}
+
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     padding: 1rem;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--header-text);
+    color: var(--header-text);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 main {
@@ -19,7 +60,7 @@ main {
 }
 
 #post-creator {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
@@ -29,13 +70,15 @@ main {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 3px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 #post-form button {
-    background-color: #333;
-    color: white;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 3px;
@@ -43,7 +86,7 @@ main {
 }
 
 .post {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
